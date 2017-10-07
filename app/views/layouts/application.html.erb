@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TokensForTeslas</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, minimum-scale=1">
+    <title>Tokens For Teslas • API token generator for the Tesla API</title>
     <%= csrf_meta_tags %>
+
+    <%# Webfonts %>
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400i,Montserrat:400,700' rel='stylesheet' type='text/css'>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <main>
+      <div class="container grid mt5">
+        <h1 class="g12 center-text">Tokens for Teslas</h1>
+        <h3 class="g12 center-text">Securely create access tokens for third-party access to your Tesla</h3>
+
+        <%= yield %>
+
+        <div class="g6 center mt4 mb4">
+          <h2 class="center-text mb2">Who made this?</h2>
+          <p>My name is Corey Ward. I'm a senior-level freelancer/contract developer working on the web. <a href="http://www.coreyward.me/" target="_blank">You can find more about me on my website</a> or <a href="https://twitter.com/coreyward" target="_blank">follow me on Twitter here</a>.</p>
+          <p>Have another question? Email me: <%= mail_to "corey.atx@gmail.com", nil, subject: "Tokens for Teslas" %></p>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

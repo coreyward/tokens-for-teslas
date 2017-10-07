@@ -1,0 +1,30 @@
+@import "bourbon";
+@import "normalize";
+
+@import "config/*";
+
+@import "base";
+
+@import "components/*";
+
+// Quick app styles
+.the-form {
+  border: 1px solid $n90;
+  padding: 4em;
+  border-radius: 0.5em;
+
+  @include phab-down {
+    padding: 3em;
+  }
+
+  @include lt(550) {
+    padding: 1.5em;
+    margin-left: -0.7em;
+    margin-right: -0.7em;
+  }
+
+  code {
+    word-wrap: break-word;
+    font-size: 1.2em;
+  }
+}

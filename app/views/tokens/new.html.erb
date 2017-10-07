@@ -1,20 +1,36 @@
-<h1>Get an access token for your Tesla account</h1>
+<div class="g8 center mt5">
+  <div class="the-form">
+    <h2>Generate a new Tesla API Token</h2>
+    <p>Sign in with your Tesla email and password:</p>
 
-<%= simple_form_for @token do |f| %>
-  <%= f.input :email %>
-  <%= f.input :password %>
-  <%= f.submit "Get Token" %>
-<% end %>
+    <%= simple_form_for @token do |f| %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.submit "Generate" %>
+    <% end %>
+  </div>
+</div>
 
-<h2>Is this secure?</h2>
-<p>
-  Yes. <a href="http://www.coreyward.me/" target="_blank">I use it</a> with my own Model X.
-  If you're so inclined, you can <a href="https://github.com/coreyward/tokens-for-teslas" target="_blank">check out the source code for the app here</a>.
-</p>
+<div class="values g6 center mt6">
+  <h2 class="center-text mb3">How does it work?</h2>
 
-<p>
-  This tiny app generates generic access logs that allow us to debug and prevent abuse. That
-  only includes information like your IP address, web browser, and HTTP headers. Your
-  password and Tesla API token are not included in that information. We never store those
-  in any way. They don't end up in logs or databases.
-</p>
+  <div class="value mb4">
+    <header><h4 data-prefix="01">Generate a token</h4></header>
+    <p>Use your Tesla account credentials below to generate a unique access token. Your information will not be used for any other purpose.</p>
+  </div>
+  <div class="value mb4">
+    <header><h4 data-prefix="02">Save Your Token</h4></header>
+    <p>Once you have your token, copy or save the page. Since we never store your access token, we can't retrieve it if you lose it.</p>
+  </div>
+  <div class="value mb4">
+    <header><h4 data-prefix="03">Stay safe</h4></header>
+    <p>Use your access token instead of giving third-parties access to your Tesla login. Use a separate access token with each service or provider for extra security.</p>
+  </div>
+</div>
+
+<div class="g6 center mt4">
+  <h2 class="center-text mb2">Is it secure?</h2>
+  <p>In a word, <em>yes</em>. I personally use it with my own Tesla Model X.</p>
+  <p>When you use the app your Tesla login is used for a single request to Tesla to get an access token, then never again. We don't store the login or your credentials in any way. We use SSL to encrypt all communication over the network. The app is deployed to Heroku, who is very reputable (owned by Salesforce).</p>
+  <p>If you're not convinced, the codebase is open source. You can find the code <a href="https://github.com/coreyward/tokens-for-teslas" target="_blank">in this repository on Github</a>.</p>
+</div>

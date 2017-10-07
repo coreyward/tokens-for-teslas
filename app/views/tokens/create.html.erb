@@ -1,16 +1,22 @@
-<h1>Success!</h1>
+<div class="g9 mt5 center">
+  <div class="the-form">
+    <h2 class="mt0">Tesla API Access Token</h2>
 
-<p>Here's your Tesla API token that will work for accessing <%= @token.vehicle_names %>:</p>
-<p>
-  <code><%= @token.token %></code>
-</p>
+    <h4 class="mt2 mb0">Access Token</h4>
+    <code><%= @token.token %></code>
 
-<p>
-  This token expires <strong><%= l @token.expiration, format: :long %></strong>. You can
-  come back and generate another one closer to that date to keep things working.
-</p>
+    <hr class="mt2 mb2">
 
-<p>
-  <strong>Note:</strong> We do not store this token. If you refresh the page we will
-  generate another token. When you leave the page, it's gone.
-</p>
+    <h4 class="mt2 mb0">Account</h4>
+    <code><%= @token.email %></code>
+
+    <h4 class="mt2 mb0">Vehicles</h4>
+    <code><%= @token.vehicle_names %></code>
+
+    <h4 class="mt2 mb0">Expiration</h4>
+    <code><%= l @token.expiration, format: :short %></code>
+
+    <h3 class="mt5">Please save this information.</h3>
+    <p class="mb0">Once you leave this page it will not be available.</p>
+  </div>
+</div>

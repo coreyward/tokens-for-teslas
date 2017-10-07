@@ -1,0 +1,42 @@
+::selection {
+  background: $blue;
+  color: #fff;
+}
+
+body {
+  background: #fff;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+
+  &.block-image {
+    display: block;
+  }
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr {
+  width: rem(30);
+  border: 0;
+  border-top: 4px solid $blue;
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

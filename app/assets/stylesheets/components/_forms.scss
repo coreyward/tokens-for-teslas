@@ -1,0 +1,172 @@
+.form-row {
+  grid-template-columns: 1fr 1fr;
+  grid-gap: rem(30);
+  align-items: flex-start;
+
+  @include tab-up {
+    display: grid;
+  }
+}
+
+.project-inquiry,
+.career-inquiry {
+  @extend .center;
+  @include desk-up {
+    width: rem(570);
+    min-width: 570px;
+  }
+
+  @include tab-down {
+    max-width: rem(570);
+  }
+}
+
+form {
+  @extend .center;
+
+  .input {
+    margin-bottom: rem(30);
+  }
+
+  abbr {
+    display: none;
+  }
+
+  label {
+    @extend .smallcaps;
+    display: block;
+    margin-bottom: rem(16);
+  }
+
+  .required label:after {
+    content: '*';
+  }
+
+  .error {
+    font-size: rem(14);
+    font-style: italic;
+    color: $n30;
+  }
+}
+
+.input {
+  &.string,
+  &.email,
+  &.password,
+  &.url,
+  &.tel {
+    label {
+      @include transform(translateY(rem(50)));
+      @include transition(all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1));
+
+      &.active-input {
+        color: $n50;
+        @include transform(translateY(0));
+      }
+    }
+  }
+}
+
+.input.text {
+  margin-top: rem(30);
+}
+
+#{$all-text-inputs} {
+  border: 0;
+  border-bottom: 1px solid $n90;
+  border-radius: 0;
+  padding: 0 0 0.75em 0;
+  width: 100%;
+  font-size: rem(24);
+  color: $n30;
+  outline: none;
+
+  &:active,
+  &:focus {
+    border-color: $n50;
+  }
+}
+
+textarea {
+  background: rgba($n90, 0.4);
+  border-radius: rem(3);
+  border: 0;
+  padding: 0.5em;
+  height: rem(160);
+  resize: none;
+  font-size: rem(18);
+}
+
+input[type="image"] {
+  border: 0;
+  width: rem(44);
+}
+
+form .input.message_budget {
+  margin: 0;
+}
+
+.budget-selector .form-row {
+  display: grid;
+  align-items: center;
+}
+
+.slider-display {
+  font-size: rem(24);
+  color: $n30;
+
+  &:before {
+    content: '$';
+    @extend .smallcaps;
+    padding-right: 4px;
+    vertical-align: middle;
+  }
+}
+
+.image-submit:hover {
+  path {
+    color: lighter($orange);
+  }
+}
+
+.contact-tabs {
+  display: flex;
+  justify-content: center;
+
+  .tab:first-child {
+    border-right: 1px solid rgba($n50, 0.3);
+    padding-right: rem(24);
+    margin-right: rem(24);
+  }
+
+  a,
+  .tab-label {
+    display: block;
+    @extend .smallcaps;
+    color: $n50;
+    padding: rem(7) 0;
+    border-bottom: 2px solid transparent;
+
+    &.active {
+      color: $orange;
+      border-color: $orange;
+    }
+  }
+}
+
+.alternate-contact {
+  @extend .mt6;
+  font-size: rem(16);
+  padding-left: rem(70);
+  background: image-url("project-nerd.png") no-repeat;
+  background-size: rem(40);
+  background-position: left center;
+
+  @include phab-down {
+    background-position: left rem(10);
+  }
+}
+
+.career-inquiry .alternate-contact {
+  background-image: image-url("career-nerd.png");
+}

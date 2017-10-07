@@ -1,0 +1,158 @@
+//
+// Typography Settings
+//
+
+$base-font-size: 20px; // ~20px @ 1440px
+$base-line-height: 1.6;
+$base-font-family: "PT Serif", $georgia;
+
+$sans-font-size: 18px;
+$sans-font-family: "Montserrat", $helvetica;
+
+//
+// Mixins
+//
+
+// Handle letter spacing using Sketch notation, maintaining the relationship
+// between font size and character spacing as the type scales
+@mixin character-spacing($font-size, $character-spacing) {
+  letter-spacing: #{$character-spacing / $font-size}em;
+}
+
+//
+// Base Styles
+//
+
+html,
+body {
+  font: 400 $base-font-size $base-font-family;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+  line-height: $base-line-height;
+  color: $n50;
+
+  @include tab-down { font-size: 18px; }
+  @include phab-down { font-size: 17px; }
+  @include mobile { font-size: 15px; }
+}
+
+//
+// Headings
+
+%h-base {
+  font-family: $sans-font-family;
+  color: inherit;
+  margin: 0;
+}
+
+.smallcaps {
+  font-family: $sans-font-family;
+  font-size: rem(12);
+  color: rgba($n50, 0.6);
+  text-transform: uppercase;
+  line-height: 1.2;
+  @include character-spacing(10, 2);
+}
+
+h1 {
+  @extend %h-base;
+  font-size: rem(38);
+  line-height: 1.375;
+  @include character-spacing(32, -1);
+  margin-bottom: rem(16);
+  color: $black;
+}
+
+h2 {
+  @extend %h-base;
+  font-size: rem(24);
+  line-height: 1.33;
+  @include character-spacing(24, -0.5);
+  margin-bottom: 0.667em;
+  color: $black;
+}
+
+h3 {
+  font-size: rem(26);
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: italic;
+  color: $black;
+  @include character-spacing(32, -0.5);
+  margin: 0;
+}
+
+h4 {
+  @extend %h-base, .smallcaps;
+  margin-bottom: 1.2em;
+  font-weight: 400;
+}
+
+
+//
+// Base Elements
+//
+
+p {
+  margin-bottom: 1.2em;
+}
+
+p.small {
+  font-size: rem(16);
+}
+
+
+//
+// Mobile Adjustments
+//
+@include tab-down {
+  h1 {
+    font-size: rem(28);
+    line-height: 1.5;
+    @include character-spacing(28, -0.5);
+  }
+
+  h2 {
+    // no-op
+  }
+
+  h3 {
+    font-size: rem(28);
+    @include character-spacing(28, -0.5);
+  }
+
+  h4 {
+    // no-op
+  }
+}
+
+@include phab-down {
+  body {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: rem(24);
+  }
+
+  p {
+    font-size: rem(18)
+  }
+
+  p.small {
+    font-size: rem(14);
+  }
+}
+
+// Alignment
+.center-text {
+  text-align: center;
+}
+
+@include desk-up {
+  .center-text--desktop {
+    text-align: center;
+  }
+}

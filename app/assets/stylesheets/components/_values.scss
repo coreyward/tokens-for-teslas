@@ -1,0 +1,38 @@
+.values {
+  header {
+    display: flex;
+    background: linear-gradient(to bottom, transparent, $n90, transparent);
+    background-size: auto 1px;
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+
+  h4 {
+    color: $black;
+    margin: 0;
+    background: #fff;
+    min-width: rem(160);
+    padding-right: 1em;
+    font-weight: normal;
+
+    &:before {
+      content: attr(data-prefix);
+      color: $n50;
+      margin-right: 1em;
+    }
+
+    &:after {
+      content: '.'
+    }
+  }
+}
+
+@include tab-down {
+  .values {
+    max-width: rem(500);
+  }
+
+  .values-intro {
+    max-width: rem(635);
+  }
+}

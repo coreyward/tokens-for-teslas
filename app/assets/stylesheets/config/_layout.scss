@@ -1,0 +1,15 @@
+$base: 16px;
+
+@for $i from 1 through 20 {
+  .mt#{$i} { margin-top: rem($i * $base) }
+  .mb#{$i} { margin-bottom: rem($i * $base) }
+  .pt#{$i} { padding-top: rem($i * $base) }
+}
+
+@include tab-down {
+  @for $i from 1 through 20 {
+    .mt#{$i} { margin-top: rem($i * $base * 0.75) }
+    .mb#{$i} { margin-bottom: rem($i * $base * 0.75) }
+    .pt#{$i} { padding-top: rem($i * $base * 0.75) }
+  }
+}

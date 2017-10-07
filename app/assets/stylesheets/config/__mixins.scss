@@ -1,0 +1,19 @@
+//
+// Core Mixins
+//
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function px($number) {
+  @return #{strip-units($number)}px
+}
+
+// Rem Relative Sizing
+@function rem($pixels) {
+  @return #{strip-unit($pixels) / 20}rem;
+}

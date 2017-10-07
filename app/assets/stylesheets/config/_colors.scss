@@ -1,0 +1,29 @@
+//
+// Brand Colors
+//
+$orange: #FF6600;
+$black: #303E4D;
+$blue: #2D96CD;
+
+//
+// Neutral colors / grays
+// » naming scheme: n{HSB brightness, rounded to tens}
+//
+
+$n30: $black;
+$n50: #7A8289;
+$n90: #EBEDEE;
+$n100: #FAFDFF;
+
+//
+// Shortcut Classes
+//
+
+.orange { color: $orange; }
+.orange-bg { background-color: $orange; }
+
+.black { color: $black; }
+.black-bg { background-color: $black; }
+
+.blue { color: $blue; }
+.blue-bg { background-color: $blue; }

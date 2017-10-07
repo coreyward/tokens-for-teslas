@@ -1,0 +1,134 @@
+//
+// Breakpoints for RWD
+//
+
+$mob-end: 450px;
+
+$phab-start: 451px;
+$phab-end: 767px;
+
+$tab-start: 768px;
+$tab-end: 1024px;
+
+$desk-start: 1025px;
+$desk-end: 1410px;
+
+$lg-start: 1411px;
+$lg-end: 1909px;
+
+$xl-start: 1910px;
+
+//
+// Mixins
+//
+
+// Base
+
+@mixin rwd($gt, $lt) {
+  @media (min-width: px($gt)) and (max-width: px($lt)) { @content; }
+}
+
+@mixin gt($width) {
+  @media (min-width: px($width)) { @content; }
+}
+
+@mixin lt($width) {
+  @media (max-width: px($width)) { @content; }
+}
+
+// Mobile
+
+@mixin mobile {
+  @include lt($mob-end) { @content; }
+}
+
+// Phablet
+
+@mixin phab {
+  @include rwd($phab-start, $phab-end) { @content; }
+}
+
+@mixin phab-up {
+  @include gt($phab-start) { @content; }
+}
+
+@mixin phab-down {
+  @include lt($phab-end) { @content; }
+}
+
+// Tablet
+
+@mixin tab {
+  @include rwd($tab-start, $tab-end) { @content; }
+}
+
+@mixin tab-up {
+  @include gt($tab-start) { @content; }
+}
+
+@mixin tab-down {
+  @include lt($tab-end) { @content; }
+}
+
+// Desktop
+
+@mixin desk {
+  @include rwd($desk-start, $desk-end) { @content; }
+}
+
+@mixin desk-up {
+  @include gt($desk-start) { @content; }
+}
+
+@mixin desk-down {
+  @include lt($desk-end) { @content; }
+}
+
+// Desktop Large
+
+@mixin desk-lg {
+  @include rwd($lg-start, $lg-end) { @content; }
+}
+
+@mixin desk-lg-up {
+  @include gt($lg-start) { @content; }
+}
+
+@mixin desk-lg-down {
+  @include lt($lg-end) { @content; }
+}
+
+// Desktop XL
+
+@mixin desk-xl-up {
+  @include gt($xl-start) { @content; }
+}
+
+
+.mobile {
+  @include phab-up { display: none !important; }
+}
+
+.phab-up {
+  @include mobile { display: none !important; }
+}
+
+.phab-down {
+  @include tab-up { display: none !important; }
+}
+
+.tab-up {
+  @include phab-down { display: none !important; }
+}
+
+.tab-down {
+  @include desk-up { display: none !important; }
+}
+
+.desk-up {
+  @include tab-down { display: none !important; }
+}
+
+.desk-down {
+  @include desk-lg-up { display: none !important; }
+}
