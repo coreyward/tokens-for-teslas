@@ -13,14 +13,18 @@ class Token
 
   def login!
     @token ||= begin
-      t = api.login!(password)
+      token = api.login!(password)
       @expiration = 90.days.from_now
-      t
+      token
     end
+
+    @token.present?
   end
 
   def vehicle_names
     api.vehicles.map(&:display_name).to_sentence
+  rescue NoMethodError # API client throws error when `vehicles` is nil
+    "(none)"
   end
 
 protected
