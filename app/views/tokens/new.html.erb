@@ -1,0 +1,17 @@
+<h1>Get an access token for your Tesla account</h1>
+
+<%= simple_form_for @token do |f| %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.submit "Get Token" %>
+<% end %>
+
+<h2>Is this secure?</h2>
+<p>Yes. <a href="http://www.coreyward.me/" target="_blank">I use it</a> with my own Model X.</p>
+
+<p>
+  This tiny app generates generic access logs that allow us to debug and prevent abuse. That
+  only includes information like your IP address, web browser, and HTTP headers. Your
+  password and Tesla API token are not included in that information. We never store those
+  in any way. They don't end up in logs or databases.
+</p>

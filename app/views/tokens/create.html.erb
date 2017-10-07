@@ -1,0 +1,16 @@
+<h1>Success!</h1>
+
+<p>Here's your Tesla API token that will work for accessing <%= @token.vehicle_names %>:</p>
+<p>
+  <code><%= @token.token %></code>
+</p>
+
+<p>
+  This token expires <strong><%= l @token.expiration, format: :long %></strong>. You can
+  come back and generate another one closer to that date to keep things working.
+</p>
+
+<p>
+  <strong>Note:</strong> We do not store this token. If you refresh the page we will
+  generate another token. When you leave the page, it's gone.
+</p>
