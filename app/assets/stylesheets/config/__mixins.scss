@@ -10,7 +10,7 @@
 }
 
 @function px($number) {
-  @return #{strip-units($number)}px
+  @return #{strip-unit($number)}px
 }
 
 // Rem Relative Sizing

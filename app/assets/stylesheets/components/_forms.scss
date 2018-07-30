@@ -56,12 +56,12 @@ form {
   &.url,
   &.tel {
     label {
-      @include transform(translateY(rem(50)));
-      @include transition(all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1));
+      transform: translateY(rem(50));
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 
       &.active-input {
         color: $n50;
-        @include transform(translateY(0));
+        transform: translateY(0);
       }
     }
   }
@@ -71,7 +71,7 @@ form {
   margin-top: rem(30);
 }
 
-#{$all-text-inputs} {
+input:not([type="submit"]) {
   border: 0;
   border-bottom: 1px solid $n90;
   border-radius: 0;
