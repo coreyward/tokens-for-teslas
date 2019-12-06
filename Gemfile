@@ -7,7 +7,7 @@ end
 
 # Core Gems
 gem 'rails', '~> 5.2.2'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 
 # Stylesheets
 gem 'sass-rails', '~> 5.0'
